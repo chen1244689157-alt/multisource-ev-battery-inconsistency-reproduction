@@ -1,0 +1,93 @@
+[
+  {
+    "figure": 1,
+    "caption": "Voltage-led battery inconsistency screening and multidimensional explainable localization. a, Multisource cell-voltage records from datasets A-C undergo time ordering, session reconstruction and quality control to generate native-resolution records and 10-min snapshots. b, Physical evidence comprises module-relative temperature, equivalent-resistance step responses and conditionally identifiable relative SOC. c, Relative-voltage stage changes and terminal deviations determine risk grades, while condition-matched historical references characterize cross-session recurrence. d, VM-GMEFNet integrates voltage priors with availability-masked auxiliary evidence for candidate ranking and evidence verification. e, Hierarchical outputs include voltage risk, candidate locations, evidence support and retrospective timing. f, The independent dataset-D path uses DOC-MLP to model brand-specific normal charging responses and aggregates the highest-scoring 5% of sessions for pack-level screening.",
+    "status": "execution_passed",
+    "script": "code/export_fig_01.py",
+    "reproduction_scope": "static schematic artwork export; not editable object reconstruction"
+  },
+  {
+    "figure": 2,
+    "caption": "Cohort scale, operating coverage and quality control. a, Vehicle numbers and observation resolution; the horizontal axis is logarithmic. A and B contain separate training and test cohorts, C is an independent source domain, and D provides pack-level charging records. b, Contours enclosing approximately 75% of the observation distribution in SOC–absolute-current space for each domain. c, Principal component analysis (PCA) of vehicle-level operating profiles; each point represents one vehicle from A training, B training, C or D. Profiles comprise the median and interquartile range of SOC, absolute current, upper-temperature statistics and voltage spread. The first two principal components (PC1 and PC2) explain 46.8% and 18.9% of the variance, respectively. d, Retention after quality control, with analysis counts shown as records for A-C and sessions for D. The dashed line indicates complete retention.",
+    "status": "execution_passed",
+    "script": "code/plot_fig_02.py",
+    "reproduction_scope": "regeneration from derived plotting data"
+  },
+  {
+    "figure": 3,
+    "caption": "Voltage-derived risk distributions across full-cell cohorts. a-e, Ascending vehicle voltage scores for A training (n = 25), B training (n = 13), A test (n = 30), B test (n = 20) and C (n = 10), respectively. Each point represents one vehicle; blue, green and coral indicate low (labelled Normal in the legend), medium and high risk. Dashed and dotted lines mark the 75th- and 90th-percentile reference boundaries. The test cohorts of platforms A and B use boundaries frozen from their respective training cohorts; C uses its own reference distribution. The score is the product of a voltage change and a dimensionless terminal-deviation fraction and thus retains millivolt units. f, Cohort-wise vehicle counts in each grade across all 98 vehicles.",
+    "status": "execution_passed",
+    "script": "code/plot_fig_03.py",
+    "reproduction_scope": "regeneration from derived plotting data"
+  },
+  {
+    "figure": 4,
+    "caption": "Cell-voltage behaviour and operating conditions of representative risk grades. Columns show A-TR-23, A-TR-02 and A-TR-01, representing low (labelled Normal), medium and high risk. a-c, Relative voltage of the score-leading cell (red) against the contemporaneous 10th-90th percentile range of the remaining cells (blue). The horizontal dashed line marks -3 mV. Shaded time regions identify the first and last 20% of valid snapshots used for stage comparison. d-f, Median relative-voltage profiles across cell indices in the early (green) and late (purple) stages; highlighted markers identify the score-leading cell. The reported changes refer to that cell. g-i, State of charge (SOC; left axis) and pack current (right axis) over the same observation period. Vehicle codes combine the domain, training (TR) or test (TE) split, and an anonymized within-group index. The three cases link risk grades to cell behaviour and its operating context.",
+    "status": "execution_passed",
+    "script": "code/plot_fig_04.py",
+    "reproduction_scope": "regeneration from derived plotting data"
+  },
+  {
+    "figure": 5,
+    "caption": "Condition-matched historical reference and cross-session recurrence. Columns compare low-risk A-TR-23 (labelled Normal; Cell 2), medium-risk A-TR-02 (Cell 26) and high-risk A-TR-01 (Cell 25). a-c, Session-level conditional-residual maps across cell indices and chronologically ordered eligible sessions; colour indicates the median voltage departure of each cell in each session. d-f, Relative-voltage profiles summarized in SOC bins for condition-matched early references (blue circles) and supported late observations (red diamonds). Blue shading shows the interquartile range of the matched historical references. Early and late sets contain the first and last 20% of valid snapshots. g-i, Candidate-cell session residuals (left axis) and negative-session fractions over the latest 3, 6 and 12 eligible sessions (right axis). A negative session has at least three valid residuals, with at least half below -3 mV.",
+    "status": "execution_passed",
+    "script": "code/plot_fig_05.py",
+    "reproduction_scope": "regeneration from derived plotting data"
+  },
+  {
+    "figure": 6,
+    "caption": "Multidimensional evidence and parameter identifiability for voltage candidates. a-c, Cell-wise evidence maps for A-TR-23, A-TR-02 and A-TR-01, respectively. Colours show evidence percentiles calculated separately within each vehicle and dimension, and red triangles and vertical lines mark the voltage-score-leading cell. Module temperatures are mapped to their associated cell indices. Grey regions indicate non-identifiable (NI) relative SOC. d, Candidate-associated values in the same vehicle order: low-side voltage offset in mV, dimensionless equivalent-resistance robust z score, module-relative temperature in °C and relative-SOC offset in percentage points (pp). e, Spatial relation of repeated auxiliary evidence to voltage candidates among 16 medium- and 13 high-risk vehicles. Labels give vehicle counts; bar widths give within-grade proportions. Co-located evidence overlaps the candidate cell or its module, whereas distributed evidence occurs elsewhere. f, Percentages of vehicles meeting each dimension’s identifiability criteria by cohort. Tr and Te denote training and test cohorts.",
+    "status": "execution_passed",
+    "script": "code/plot_fig_06.py",
+    "reproduction_scope": "regeneration from derived plotting data"
+  },
+  {
+    "figure": 7,
+    "caption": "Auxiliary-evidence distributions and representative physical responses. a-c, Candidate-associated thermal support, relative equivalent-resistance response and relative SOC offset among identifiable medium- and high-risk vehicles. Each point is one vehicle; sample counts are given beneath each group. Boxes span the 25th-75th percentiles, central lines show medians and whiskers extend to the 5th–95th percentile limits; all vehicle observations are overlaid. The resistance axis uses a symmetric logarithmic scale to retain zero-valued responses. d, Fractions of eligible sessions supporting elevated module temperature in A-TR-06; red triangles mark voltage-candidate modules. e, Cell-wise fractions of supporting equivalent-resistance sessions in A-TR-01, with candidate cells marked. f, Its cell-wise relative-SOC offsets, highlighting Cell 23, Cell 25 and Cell 47. Dashed zero lines provide the no-offset or no-support reference. Dimension-specific identifiability requirements yield different sample sizes across dimensions.",
+    "status": "execution_passed",
+    "script": "code/plot_fig_07.py",
+    "reproduction_scope": "regeneration from derived plotting data"
+  },
+  {
+    "figure": 8,
+    "caption": "Vehicle-adaptive OCV-SOC reference and module-temperature evolution. a, Stationary anchors (blue), SOC-bin medians (green) and the monotonic OCV-SOC reference (red) for A-TR-01. The fit uses 22 qualified anchors spanning 47 SOC percentage points; grey reference segments identify slopes below the inversion threshold of 0.8 mV per SOC percentage point. b, Stationary voltage departures from the fitted reference for candidate Cell 23, Cell 25 and Cell 47, with the pack-median departure shown in grey. c,d, Session-level 95th-percentile module-relative temperatures over elapsed time in A-TR-06 and A-TR-01, respectively. Module labels identify candidate, neighbouring or supporting locations; M denotes module index. The two cases contrast a localized thermal region near the candidates with evidence distributed across other modules. Temperature provides module-level context, while the stationary-voltage reference supports relative-SOC interpretation at cell level.",
+    "status": "execution_passed",
+    "script": "code/plot_fig_08.py",
+    "reproduction_scope": "regeneration from derived plotting data"
+  },
+  {
+    "figure": 9,
+    "caption": "VM-GMEFNet evidence fusion and candidate-cell ranking. a, Voltage-attention and mean auxiliary-evidence scores for the 38 training vehicles from platforms A and B, coloured by voltage base grade, with Normal denoting low risk. Both coordinates are dimensionless. b, Number of shared cells between the voltage-prior and network top-three candidate sets in five vehicles with identifiable relative SOC. Grey and green markers represent three-dimensional and four-dimensional evidence configurations, respectively; connecting lines pair the same vehicle. c, Learned auxiliary gate weights for those vehicles. The dimensionless gate weights quantify the network weighting of available auxiliary features. d, Voltage and network ranks for Cell 23, Cell 25 and Cell 47 in A-TR-01, followed by their voltage, equivalent resistance, module-temperature and relative-SOC values. Rank 1 denotes the highest rank. Dashed and dotted reference lines indicate −3 mV and zero relative-SOC offset, respectively.",
+    "status": "execution_passed",
+    "script": "code/plot_fig_09.py",
+    "reproduction_scope": "regeneration from derived plotting data"
+  },
+  {
+    "figure": 10,
+    "caption": "VM-GMEFNet structural sensitivity and voltage-dominant stability. a, Mean rank correlation between network and voltage-prior ordering across 36 combinations of the auxiliary cap and voltage and auxiliary coefficients. b, Percentage of vehicles retaining the same leading candidate as the default configuration. Rows specify the auxiliary and voltage coefficients; columns specify the auxiliary cap. c, Mean auxiliary contribution versus the cap, with the range across coefficient combinations indicated by the error bars. The highlighted marker and vertical dashed line identify the default cap of 0.30. All panels use the same 38 training vehicles from platforms A and B. Candidate-rank agreement summarizes ranking stability, and auxiliary contribution quantifies the magnitude of the gated adjustment.",
+    "status": "execution_passed",
+    "script": "code/plot_fig_10.py",
+    "reproduction_scope": "regeneration from derived plotting data"
+  },
+  {
+    "figure": 11,
+    "caption": "Voltage-derived base risk and multidimensional evidence support. a, Voltage base grades across the five complete-cell cohorts (98 vehicles). Colours encode low, medium and high risk; pattern overlays distinguish co-located recurrent support, distributed multidimensional support and cross-session auxiliary support. b, Evidence-state proportions within the 16 medium- and 13 high-risk vehicles. Unpatterned portions indicate vehicles lacking the specified repeated auxiliary support. c, Cross-tabulation against the reference labels normal, inconsistency and thermal runaway. Entries give vehicle counts and percentages within each reference-label row. d, Pooled vehicle-level label agreement when medium or high risk is a positive screen and inconsistency or thermal runaway is a positive reference label. The F1 score is the harmonic mean of precision and recall. Metrics pool all 98 vehicles from the reference and test cohorts.",
+    "status": "execution_passed",
+    "script": "code/plot_fig_11.py",
+    "reproduction_scope": "regeneration from derived plotting data"
+  },
+  {
+    "figure": 12,
+    "caption": "Temporal evolution of inconsistency risk. a–c, Voltage scores recomputed from successive observation prefixes for A-TR-23, A-TR-02 and A-TR-01, respectively; panel titles state the final risk grade. Point colours show the grade at each evaluated prefix, and dashed and dotted lines indicate the domain-specific 75th- and 90th-percentile boundaries. d, Corresponding risk states for all 98 vehicles, grouped by cohort. Each row represents a vehicle and horizontal position is normalized to its own observation period. Grey denotes unavailable assessment or absent observations. Scores and grades are recalculated at each observation prefix. This retrospective reconstruction traces the emergence and evolution of risk evidence over the recorded observation period.",
+    "status": "execution_passed",
+    "script": "code/plot_fig_12.py",
+    "reproduction_scope": "regeneration from derived plotting data"
+  },
+  {
+    "figure": 13,
+    "caption": "Brand-wise conditional-response modelling and pack-level screening of aggregated charging segments. a, Vehicle scores divided by their brand-specific calibrated thresholds and ranked within each brand (n = 198, 49 and 100). The dashed line at one is the screening boundary. b, Accuracy, specificity and false-positive rate against the source-provided vehicle-level normal and abnormal labels across all 347 vehicles from five-fold vehicle-isolated cross-validation (CV); displayed values are rounded to whole percentages. c,d, Observed session voltage-spread 95th percentiles against median SOC for vehicle 100 (431 sessions) and vehicle 107 (42 sessions). Each point represents a session, coloured by charging current. e,f, Corresponding session 5th-percentile minimum-cell voltage and 95th-percentile temperature spread, with blue circles and coral diamonds distinguishing the two vehicles. These measured session summaries characterize the voltage and thermal responses associated with the vehicle screening scores.",
+    "status": "execution_passed",
+    "script": "code/plot_fig_13.py",
+    "reproduction_scope": "regeneration from derived plotting data"
+  }
+]

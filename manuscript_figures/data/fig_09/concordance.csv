@@ -1,0 +1,12 @@
+vehicle_alias,no_soc_overlap,four_dim_overlap,relative_soc_available
+A-TR-01,3,3,1
+A-TR-17,0,1,1
+B-TR-13,1,1,0
+A-TR-06,0,0,0
+B-TR-11,1,1,1
+A-TR-20,0,0,0
+A-TR-02,3,3,0
+B-TR-02,3,3,1
+A-TR-03,0,0,0
+A-TR-19,0,0,0
+B-TR-09,2,2,1

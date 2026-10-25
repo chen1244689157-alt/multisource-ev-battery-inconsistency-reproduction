@@ -1,0 +1,7 @@
+cohort,vehicles,role,resolution
+A train,25,Training,Cell level
+A test,30,Testing,Cell level
+B train,13,Training,Cell level
+B test,20,Testing,Cell level
+C,10,Independent,Cell level
+D,347,Aggregate,Pack level

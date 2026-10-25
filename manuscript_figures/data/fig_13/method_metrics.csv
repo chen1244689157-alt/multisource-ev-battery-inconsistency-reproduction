@@ -1,0 +1,2 @@
+method,n,accuracy,specificity,false_positive_rate
+mlp_alarm,347,0.861671469740634,0.9452054794520548,0.0547945205479452

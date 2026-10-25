@@ -1,0 +1,2 @@
+n,TP,FP,TN,FN,accuracy,sensitivity,specificity,precision,false_positive_rate,false_negative_rate,method
+347,23,16,276,32,0.861671469740634,0.4181818181818181,0.9452054794520548,0.5897435897435898,0.0547945205479452,0.5818181818181818,mlp_alarm
